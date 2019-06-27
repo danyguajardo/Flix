@@ -26,7 +26,15 @@
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
     [self fetchMovies];
+    
+    
     // Do any additional setup after loading the view.
+    
+//    decide how many movies per row
+    UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *) self.collectionView.collectionViewLayout;
+    CGFloat width = self.collectionView.frame.size.width / 3;
+    CGFloat height = width * 1.5;
+    layout.itemSize = CGSizeMake(width, height);
 }
 
 -(void) fetchMovies {
