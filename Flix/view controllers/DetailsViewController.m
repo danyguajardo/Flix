@@ -37,6 +37,8 @@
     self.titleLabel.text = self.movie[@"title"];
     self.synopsisLabel.text = self.movie [@"overview"];
     
+    [self.titleLabel sizeToFit];
+    [self.synopsisLabel sizeToFit];
 //    [__NSCFString absoluteURL]
     
     // Do any additional setup after loading the view.
