@@ -190,11 +190,11 @@
             </objects>
             <point key="canvasLocation" x="-33.333333333333336" y="1556.9196428571429"/>
         </scene>
-        <!--Item-->
+        <!--Scroll-->
         <scene sceneID="Ruc-ZA-seC">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QI0-8k-hiG" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="MOH-Gs-G4l"/>
+                    <tabBarItem key="tabBarItem" title="Scroll" id="MOH-Gs-G4l"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EHy-MR-zJA">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -209,11 +209,11 @@
             </objects>
             <point key="canvasLocation" x="-33" y="-28"/>
         </scene>
-        <!--Item-->
+        <!--Grid-->
         <scene sceneID="E1q-25-D3U">
             <objects>
                 <navigationController id="JpP-Zt-6c5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="zCI-TR-xqv"/>
+                    <tabBarItem key="tabBarItem" title="Grid" id="zCI-TR-xqv"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WaY-tz-NVb">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -234,27 +234,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WV8-25-RDk">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Bmw-Co-aqx">
                                 <rect key="frame" x="0.0" y="17" width="414" height="870"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="quT-fh-ELb">
-                                    <size key="itemSize" width="192" height="265"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="egQ-6P-Bl2">
+                                    <size key="itemSize" width="137" height="227"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MovieCollectionViewCell" id="uXl-gO-auO" customClass="MovieCollectionViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="137" height="227"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="137" height="227"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZQZ-zs-PnP" customClass="Movie">
+                                                    <rect key="frame" x="0.0" y="0.0" width="141" height="237"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <connections>
+                                            <outlet property="posterView" destination="ZQZ-zs-PnP" id="rSL-sF-Dwl"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="CHB-d9-Pmo"/>
                     </view>
                     <navigationItem key="navigationItem" id="f1v-9f-YVd"/>
+                    <connections>
+                        <outlet property="collectionView" destination="Bmw-Co-aqx" id="5cp-Uw-nQe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ml9-nD-SoD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1782.608695652174" y="762.72321428571422"/>
+            <point key="canvasLocation" x="1782.608695652174" y="839.73214285714278"/>
         </scene>
     </scenes>
 </document>

@@ -7,11 +7,14 @@
 //
 
 #import "MoviesGridViewController.h"
+#import "MovieCollectionViewCell.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface MoviesGridViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (nonatomic, strong) NSArray *movies;
-@property (weak, nonatomic) IBOutlet UICollectionViewCell *collectionView;
+
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @end
 
@@ -20,8 +23,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    self.collectionView.dataSource = self;
-//    self.collectionView.delegate = self;
+    self.collectionView.dataSource = self;
+    self.collectionView.delegate = self;
+    [self fetchMovies];
     // Do any additional setup after loading the view.
 }
 
@@ -38,12 +42,10 @@
         else {
             NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
             
-            NSLog (@"%@", dataDictionary);
             self.movies = dataDictionary[@"results"];
             
-            for(NSDictionary *movie in self.movies){
-                NSLog(@"%@", movie[@"title"]);
-            }
+            [self.collectionView reloadData];
+
             
 //            [self.tableView reloadData];
             
@@ -66,5 +68,29 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    MovieCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:(@"MovieCollectionViewCell") forIndexPath:indexPath];
+    
+    NSDictionary *movie = self.movies[indexPath.item];
+
+    NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
+    NSString *posterURLString = movie[@"poster_path"];
+    NSString *fullPosterURLString = [baseURLString stringByAppendingString:posterURLString];
+    
+    
+    NSURL *posterURL = [NSURL URLWithString:fullPosterURLString];
+    
+    [cell.posterView setImageWithURL:posterURL];
+    
+    
+    return cell;
+}
+
+- (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.movies.count;
+}
+
+
 
 @end
