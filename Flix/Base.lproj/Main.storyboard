@@ -260,6 +260,7 @@
                                         </view>
                                         <connections>
                                             <outlet property="posterView" destination="ZQZ-zs-PnP" id="rSL-sF-Dwl"/>
+                                            <segue destination="mAp-IA-jLT" kind="show" id="x92-OF-tIH"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -278,4 +279,7 @@
             <point key="canvasLocation" x="1782.608695652174" y="839.73214285714278"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="x92-OF-tIH"/>
+    </inferredMetricsTieBreakers>
 </document>
