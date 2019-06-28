@@ -117,7 +117,6 @@
     
     [cell.posterView setImageWithURL:posterURL];
     
-//    cell.textLabel.text = movie[@"title"];
     return cell;
 }
 
