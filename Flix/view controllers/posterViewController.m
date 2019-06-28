@@ -19,13 +19,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    self.posterView = self.moviePoster;
+    self.posterView = self.moviePoster;
 
-    NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
-    NSString *posterURLString = self.posterView[@"poster_path"];
-    NSString *fullPosterURLString = [baseURLString stringByAppendingString:posterURLString];
-    NSURL *posterURL = [NSURL URLWithString:fullPosterURLString];
-    [self.posterView setImageWithURL:posterURL];
+//    NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
+//    NSString *posterURLString = self.posterView[@"poster_path"];
+//    NSString *fullPosterURLString = [baseURLString stringByAppendingString:posterURLString];
+//    NSURL *posterURL = [NSURL URLWithString:fullPosterURLString];
+//    [self.posterView setImageWithURL:posterURL];
 
     // Do any additional setup after loading the view.
 }
