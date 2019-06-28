@@ -22,7 +22,7 @@ The following **optional** features are implemented:
 - [ ] All images fade in as they are loading.
 - [x] User can view the trailer when clicking on the poster.
 - [ ] For the large poster, load the low resolution image first and then switch to the high resolution image when complete.
-- [ ] Customize the selection effect of the cell.
+- [x] Customize the selection effect of the cell.
 - [x] Customize the navigation bar.
 - [x] Customize the UI.
 
