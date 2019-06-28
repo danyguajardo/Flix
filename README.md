@@ -3,7 +3,7 @@
 
 **Flix** is a movies app using the [The Movie Database API](http://docs.themoviedb.apiary.io/#).
 
-Time spent: **X** hours spent in total
+Time spent: **12** hours spent in total
 
 ## User Stories
 
@@ -32,8 +32,8 @@ The following **additional** features are implemented:
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1.
-2.
+1. I would like to discuss the different libraries everyone included in order to achieve the search bar/trailer features
+2. I would also like to talk about the different ways people managed to simulate the poor/loss of conection to internet
 
 ## Video Walkthrough
 
