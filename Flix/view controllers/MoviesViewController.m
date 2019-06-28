@@ -12,12 +12,14 @@
 #import "UIImageView+AFNetworking.h"
 
 
-@interface MoviesViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface MoviesViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 
 @property (nonatomic, strong) NSArray *movies;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (strong, nonatomic) NSArray *searchedMovies;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 
 @end
@@ -31,6 +33,9 @@
     
     [self.activityIndicator startAnimating];
 
+    self.searchBar.delegate = self;
+    self.searchedMovies = self.movies;
+    
     [self fetchMovies];
     self.refreshControl = [[UIRefreshControl alloc] init];
     
@@ -39,6 +44,7 @@
     [self.tableView insertSubview:self.refreshControl atIndex:0];
     
 }
+
 
 -(void) fetchMovies {
     // Do any additional setup after loading the view.
@@ -70,21 +76,15 @@
         else {
             NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
             
-            NSLog (@"%@", dataDictionary);
             self.movies = dataDictionary[@"results"];
-            
-            for(NSDictionary *movie in self.movies){
-                NSLog(@"%@", movie[@"title"]);
-            }
-            
-            [self.tableView reloadData];
-            
-            // TODO: Get the array of movies
-            // TODO: Store the movies in a property to use elsewhere
-            // TODO: Reload your table view data
+            self.searchedMovies = self.movies;
+
         }
+        [self.tableView reloadData];
+
         [self.activityIndicator stopAnimating];
         [self.refreshControl endRefreshing];
+
     }];
     [task resume];
 }
@@ -95,13 +95,13 @@
 //}
 
 -(NSInteger)tableView:(UITableView *) tableView numberOfRowsInSection:(NSInteger)section{
-    return self.movies.count;
+    return self.searchedMovies.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     movieCell *cell = [tableView dequeueReusableCellWithIdentifier:@"movieCell"];
     
-    NSDictionary *movie = self.movies[indexPath.row];
+    NSDictionary *movie = self.searchedMovies[indexPath.row];
 //    NSLog (@"%@", [NSString stringWithFormat: @"row: %d, section %d", indexPath.row, indexPath.section]);
     cell.titleLabel.text = movie[@"title"];
     cell.synopsisLabel.text = movie[@"overview"];
@@ -121,6 +121,33 @@
     return cell;
 }
 
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    
+    if (searchText.length != 0) {
+        
+        NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(NSDictionary *evaluatedObject, NSDictionary *bindings) {
+            return [[evaluatedObject[@"title"] uppercaseString] containsString:[searchText uppercaseString]];
+        }];
+        self.searchedMovies = [self.movies filteredArrayUsingPredicate:predicate];
+        
+    }
+    else {
+        self.searchedMovies = self.movies;
+    }
+    
+    [self.tableView reloadData];
+    
+}
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
+    self.searchBar.showsCancelButton = YES;
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    self.searchBar.showsCancelButton = NO;
+    self.searchBar.text = @"";
+    [self.searchBar resignFirstResponder];
+}
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -136,6 +163,9 @@
     detailsViewController.movie = movie;
 }
 
-
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    [self.searchBar resignFirstResponder];
+    
+}
 
 @end
