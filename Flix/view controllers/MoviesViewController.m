@@ -105,6 +105,8 @@
 //    NSLog (@"%@", [NSString stringWithFormat: @"row: %d, section %d", indexPath.row, indexPath.section]);
     cell.titleLabel.text = movie[@"title"];
     cell.synopsisLabel.text = movie[@"overview"];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
     
     NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
     NSString *posterURLString = movie[@"poster_path"];
