@@ -8,6 +8,7 @@
 
 #import "DetailsViewController.h"
 #import "UIImageView+AFNetworking.h"
+#import "posterViewController.h"
 
 @interface DetailsViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *backdropView;
@@ -45,14 +46,21 @@
 }
 
 
-//#pragma mark - Navigation
-//
-//// In a storyboard-based application, you will often want to do a little preparation before navigation
-//    // Get the new view controller using [segue destinationViewController].
-//    // Pass the selected object to the new view controller.
-//}
-//
-//
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+    UIButton *tappedButton = sender;
+//    NSIndexPath *indexPath = [self.posterView indexPathForCell:tappedButton];
+//    NSDictionary *movie = self.movies[indexPath.row];
+    
+    
+    posterViewController *posterViewController = [segue destinationViewController];
+    posterViewController.moviePoster = self.posterView;
+}
+
+
 
 
 @end

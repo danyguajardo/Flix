@@ -135,7 +135,5 @@
 }
 
 
-//NSDictionary *activityIndicator = [self.activityIndicator startAnimating];
-//[self.activityIndicator stopAnimating];
 
 @end
