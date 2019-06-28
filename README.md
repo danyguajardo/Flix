@@ -44,9 +44,7 @@ Here's a walkthrough of implemented user stories:
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
-
-Describe any challenges encountered while building the app.
-
+The main problem I had was getting to find the trailer for each movie and linking it to the corresponding movie. Even though it was pretty similar to what we did with the movie info, it was a different use of APIs and it took me a long time. On another hand I also experience some issues when working with the new libraries because I was not familiar with having to import through xcode, I thought it was enough if I added the #import on top of the file. 
 ## Credits
 
 List an 3rd party libraries, icons, graphics, or other assets you used in your app.
