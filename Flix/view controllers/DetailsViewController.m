@@ -8,7 +8,7 @@
 
 #import "DetailsViewController.h"
 #import "UIImageView+AFNetworking.h"
-#import "posterViewController.h"
+#import "webViewController.h"
 
 @interface DetailsViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *backdropView;
@@ -40,27 +40,16 @@
     
     [self.titleLabel sizeToFit];
     [self.synopsisLabel sizeToFit];
-//    [__NSCFString absoluteURL]
-    
-    // Do any additional setup after loading the view.
+
 }
 
 
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-    UIButton *tappedButton = sender;
-//    NSIndexPath *indexPath = [self.posterView indexPathForCell:tappedButton];
-//    NSDictionary *movie = self.movies[indexPath.row];
-    
-    
-    posterViewController *posterViewController = [segue destinationViewController];
-    posterViewController.moviePoster = self.posterView;
+
+    webViewController *webViewController = [segue destinationViewController];
+    webViewController.movieUnique = self.movie[@"id"];
 }
-
-
-
 
 @end

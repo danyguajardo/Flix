@@ -13,7 +13,8 @@
 		1382010522C3FAFE00461BD4 /* MoviesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1382010422C3FAFE00461BD4 /* MoviesViewController.m */; };
 		138D5B7822C41E1100E64E49 /* movieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 138D5B7722C41E1100E64E49 /* movieCell.m */; };
 		13BAE9AA22C56DCB00C412EE /* MovieCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BAE9A922C56DCB00C412EE /* MovieCollectionViewCell.m */; };
-		13BAE9B322C593E100C412EE /* posterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BAE9B222C593E100C412EE /* posterViewController.m */; };
+		13BAE9B622C694EB00C412EE /* webViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BAE9B522C694EB00C412EE /* webViewController.m */; };
+		13BAE9B822C6A16800C412EE /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13BAE9B722C6A16800C412EE /* WebKit.framework */; };
 		13F737FC22C3B16900FB411B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F737FB22C3B16900FB411B /* AppDelegate.m */; };
 		13F7380222C3B16900FB411B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13F7380022C3B16900FB411B /* Main.storyboard */; };
 		13F7380422C3B16A00FB411B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13F7380322C3B16A00FB411B /* Assets.xcassets */; };
@@ -53,8 +54,9 @@
 		138D5B7722C41E1100E64E49 /* movieCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = movieCell.m; sourceTree = "<group>"; };
 		13BAE9A822C56DCB00C412EE /* MovieCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieCollectionViewCell.h; sourceTree = "<group>"; };
 		13BAE9A922C56DCB00C412EE /* MovieCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieCollectionViewCell.m; sourceTree = "<group>"; };
-		13BAE9B122C593E100C412EE /* posterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = posterViewController.h; sourceTree = "<group>"; };
-		13BAE9B222C593E100C412EE /* posterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = posterViewController.m; sourceTree = "<group>"; };
+		13BAE9B422C694EB00C412EE /* webViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = webViewController.h; sourceTree = "<group>"; };
+		13BAE9B522C694EB00C412EE /* webViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = webViewController.m; sourceTree = "<group>"; };
+		13BAE9B722C6A16800C412EE /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		13F737F722C3B16900FB411B /* Flix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13F737FA22C3B16900FB411B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		13F737FB22C3B16900FB411B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13BAE9B822C6A16800C412EE /* WebKit.framework in Frameworks */,
 				E521987A783F63224B42B15D /* Pods_Flix.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -117,8 +120,8 @@
 				132205A322C43B300079069C /* DetailsViewController.m */,
 				133D59EA22C47A2800B7CFBC /* MoviesGridViewController.h */,
 				133D59EB22C47A2800B7CFBC /* MoviesGridViewController.m */,
-				13BAE9B122C593E100C412EE /* posterViewController.h */,
-				13BAE9B222C593E100C412EE /* posterViewController.m */,
+				13BAE9B422C694EB00C412EE /* webViewController.h */,
+				13BAE9B522C694EB00C412EE /* webViewController.m */,
 			);
 			path = "view controllers";
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 		FF997E1E4EBD995785B294CB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				13BAE9B722C6A16800C412EE /* WebKit.framework */,
 				2FB504BAEE56762079240581 /* Pods_Flix.framework */,
 				F6A5CF7C7BA8819DA6BA48AF /* Pods_FlixTests.framework */,
 				A8FA77E395FB13F286CFD8E7 /* Pods_FlixUITests.framework */,
@@ -444,9 +448,9 @@
 				13F7380A22C3B16A00FB411B /* main.m in Sources */,
 				132205A422C43B300079069C /* DetailsViewController.m in Sources */,
 				13F737FC22C3B16900FB411B /* AppDelegate.m in Sources */,
+				13BAE9B622C694EB00C412EE /* webViewController.m in Sources */,
 				138D5B7822C41E1100E64E49 /* movieCell.m in Sources */,
 				1382010522C3FAFE00461BD4 /* MoviesViewController.m in Sources */,
-				13BAE9B322C593E100C412EE /* posterViewController.m in Sources */,
 				133D59EC22C47A2800B7CFBC /* MoviesGridViewController.m in Sources */,
 				13BAE9AA22C56DCB00C412EE /* MovieCollectionViewCell.m in Sources */,
 			);

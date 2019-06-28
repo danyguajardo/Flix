@@ -12,6 +12,7 @@
 #import "MovieCollectionViewCell.h"
 #import "UIImageView+AFNetworking.h"
 
+
 @interface MoviesGridViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate>
 
 @property (strong, nonatomic) NSArray *movies;
