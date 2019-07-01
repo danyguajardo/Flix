@@ -32,6 +32,8 @@
     self.tableView.delegate = self;
     
     [self.activityIndicator startAnimating];
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+
 
     self.searchBar.delegate = self;
     self.searchedMovies = self.movies;

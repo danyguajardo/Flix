@@ -51,7 +51,7 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieCell" rowHeight="179" id="ILB-Wj-KaO" customClass="movieCell">
                                         <rect key="frame" x="0.0" y="72" width="414" height="179"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ILB-Wj-KaO" id="f68-ns-vHg">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ILB-Wj-KaO" id="f68-ns-vHg">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="179"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -61,8 +61,8 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Synopsis" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYg-1E-M4n">
-                                                    <rect key="frame" x="126" y="52" width="266" height="101"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Synopsis" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYg-1E-M4n">
+                                                    <rect key="frame" x="126" y="52" width="266" height="15"/>
                                                     <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="15"/>
                                                     <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -79,12 +79,12 @@
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="2Zj-jC-hnW" secondAttribute="trailing" constant="20" id="BX2-LQ-Imi"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="GYg-1E-M4n" secondAttribute="bottom" constant="20" id="GGi-Nw-Kv4"/>
+                                                <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="GYg-1E-M4n" secondAttribute="bottom" constant="20" id="GGi-Nw-Kv4"/>
                                                 <constraint firstItem="2Zj-jC-hnW" firstAttribute="top" secondItem="f68-ns-vHg" secondAttribute="top" constant="5" id="KML-lv-BER"/>
                                                 <constraint firstItem="GYg-1E-M4n" firstAttribute="leading" secondItem="ivp-Az-VCp" secondAttribute="trailing" constant="20" id="fV2-b3-JDO"/>
                                                 <constraint firstItem="ivp-Az-VCp" firstAttribute="top" secondItem="f68-ns-vHg" secondAttribute="top" constant="11" id="hul-XY-eQx"/>
                                                 <constraint firstItem="GYg-1E-M4n" firstAttribute="top" secondItem="2Zj-jC-hnW" secondAttribute="bottom" constant="3.5" id="rdf-OE-5l5"/>
-                                                <constraint firstAttribute="bottom" secondItem="ivp-Az-VCp" secondAttribute="bottom" constant="14" id="tUH-Fm-Rng"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ivp-Az-VCp" secondAttribute="bottom" constant="14" id="tUH-Fm-Rng"/>
                                                 <constraint firstAttribute="trailing" secondItem="GYg-1E-M4n" secondAttribute="trailing" constant="22" id="yjI-zj-jlo"/>
                                                 <constraint firstItem="ivp-Az-VCp" firstAttribute="leading" secondItem="f68-ns-vHg" secondAttribute="leading" constant="6" id="zED-Ku-p8n"/>
                                                 <constraint firstItem="2Zj-jC-hnW" firstAttribute="top" secondItem="f68-ns-vHg" secondAttribute="top" constant="5" id="zSY-zx-ZVb"/>
